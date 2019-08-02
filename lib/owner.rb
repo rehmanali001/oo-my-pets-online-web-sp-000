@@ -34,18 +34,10 @@ class Owner
     new_cat = Cat.new(name, self)
   end
   
-  def cats
-    Cat.all.select {|c| c.owner == self}
-  end
 
    def buy_dog(name)
     new_dog = Dog.new(name, self)
   end
-  
-    def dogs
-    Dog.all.select {|d| d.owner == self}
-  end
-
 
    def walk_dogs
     @dogs.each do |dog|
