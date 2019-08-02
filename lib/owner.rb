@@ -12,8 +12,8 @@ class Owner
     @name = name
     @species = "human"
     @@all << self
-    #@cats = []
-    #@dogs = [] 
+    @cats = []
+    @dogs = [] 
     @pets = {:dogs => [], :cats => []}
   end
 
@@ -34,9 +34,8 @@ class Owner
   end
   
    def buy_cat(name)
-    #new_cat = Cat.new(name, self)
-   # @pets[] <<  new_cat
-   binding.pry
+    new_cat = Cat.new(name, self)
+    @pets[] <<  new_cat
   end
   
 
