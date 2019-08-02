@@ -8,13 +8,12 @@ class Owner
    @@all = []
 
 
-   def initialize(name, pets = {:dogs => [], :cats => [] })
+   def initialize(name)
     @name = name
     @species = "human"
     @@all << self
     @cats = []
     @dogs = [] 
-    @pets = pets
   end
 
    def self.all
@@ -41,7 +40,7 @@ class Owner
 
    def buy_dog(name)
     new_dog = Dog.new(name, self)
-    @pets[:dogs] << new_dog
+
   end
 
    def walk_dogs
