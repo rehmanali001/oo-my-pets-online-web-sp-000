@@ -2,8 +2,8 @@ require 'pry'
 
 class Owner
   # code goes here	
-   attr_accessor :pets
-  attr_reader :name, :species, :cats, :dogs 
+   attr_accessor :pets, :cats, :dogs 
+  attr_reader :name, :species, 
 
    @@all = []
 
