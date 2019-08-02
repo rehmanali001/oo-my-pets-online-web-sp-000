@@ -1,3 +1,5 @@
+require 'pry'
+
 class Owner
   # code goes here	
    attr_accessor 
@@ -29,7 +31,7 @@ class Owner
    def say_species
     "I am a #{@species}."
   end
-
+  binding.pry
    def buy_cat(name)
     new_cat = Cat.new(name, self)
   end
