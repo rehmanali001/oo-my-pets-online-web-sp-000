@@ -33,6 +33,7 @@ class Owner
     @cats.all do |cat|
       cat.owner = owner
   end
+end
   def buy_dog(name)
     new_dog = Dog.new(name,self)
   end
