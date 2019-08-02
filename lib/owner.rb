@@ -31,9 +31,10 @@ class Owner
    def say_species
     "I am a #{@species}."
   end
-  binding.pry
+  
    def buy_cat(name)
     new_cat = Cat.new(name, self)
+    binding.pry
   end
   
 
