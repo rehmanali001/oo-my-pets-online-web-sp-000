@@ -1,64 +1,75 @@
 class Owner
-    attr_reader :name, :species, :cats, :dogs
-    @@all = []
-  def initialize(name)
+  # code goes here	
+   attr_accessor 
+  attr_reader :name, :species, :cats, :dogs
+
+   @@all = []
+
+
+   def initialize(name)
     @name = name
     @species = "human"
     @@all << self
     @cats = []
-    @dogs = []
+    @dogs = [] 
   end
-  
-  def say_species
-    "I am a #{@species}."
-  end
-  
-  def self.all
+
+   def self.all
     @@all
   end
-  
-  def self.count
+
+   def self.count
     @@all.count
   end
-  
-  def self.reset_all
-    @@all.clear
+
+   def self.reset_all
+    @@all = []
   end
-  
-  def buy_cat(name)
-    new_cat = Cat.new(name,self)
+
+   def species
+    @species
   end
-  
-  def buy_dog(name)
-    new_dog = Dog.new(name,self)
+
+   def say_species
+    "I am a #{@species}."
   end
-  
-  def walk_dogs
-  @dogs.each do |dog|
-    dog.mood = "happy"
-  end  
-  end 
-  
-  def feed_cats
-  @cats.each do |cat|
-    cat.mood = "happy"
-  end   
-  end 
-  
-  def sell_pets
+
+   def buy_cat(name)
+    new_cat = Cat.new(name, self)
+  end
+
+   def buy_dog(name)
+    new_dog = Dog.new(name, self)
+  end
+
+   def walk_dogs
+    @dogs.each do |dog|
+      dog.mood = "happy"
+    end
+  end
+
+   def feed_cats
+    @cats.each do |cat|
+      cat.mood = "happy"
+    end
+  end
+
+   def sell_pets
+    # binding.pry
+    @cats.each do |cat|
+      cat.mood = "nervous"
+      cat.owner = nil
+    end
+    @cats.clear
     @dogs.each do |dog|
       dog.mood = "nervous"
-      dog.owner = nil 
+      dog.owner = nil
+    end
+    @dogs.clear
   end
-  @dogs.clear
-  @cats.each do |cat|
-    cat.mood = "nervous"
-    cat.owner = nil
+
+   def list_pets
+    "I have #{@dogs.length} dog(s), and #{@cats.length} cat(s)."
   end
-  @cats.clear
-end
-  
-  def list_pets
-  "I have #{@dogs.length} dog(s), and #{@cats.length} cat(s)."
-  end
-end
+
+ end 	end 
